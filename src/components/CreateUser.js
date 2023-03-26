@@ -11,6 +11,8 @@ const CreateUser = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.preventDefault();
+
+        // create react-with-php-mysql-server folder in htdocs 
     axios.post('http://localhost/react-with-php-mysql-server/user/save', inputs).then(function(response){
         console.log(response.data);
     });
