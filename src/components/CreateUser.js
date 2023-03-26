@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateUser = () => {
+    const navigate= useNavigate();
     const [inputs, setInputs] = useState([]);
     const handleChange = (event) => {
         const name = event.target.name;
@@ -15,6 +17,7 @@ const CreateUser = () => {
         // create react-with-php-mysql-server folder in htdocs 
     axios.post('http://localhost/react-with-php-mysql-server/user/save', inputs).then(function(response){
         console.log(response.data);
+        navigate('/');
     });
     }
     return (
