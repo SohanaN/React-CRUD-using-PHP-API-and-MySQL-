@@ -13,6 +13,13 @@ const ListUser = () => {
             setUsers(response.data);
         });
     }
+
+    const deleteUser = (id) => {
+        axios.delete(`http://localhost/react-with-php-mysql-server/user/${id}/delete`).then(function(response){
+        console.log(response.data);
+        getUsers();
+    });
+}
     return (
         <div>
             <h1>List Users</h1>
@@ -35,7 +42,7 @@ const ListUser = () => {
                             <td>{user.mobile}</td>
                             <td>
                                 <Link to={`user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
-                                <button>Delete</button>
+                                <button onClick={() => deleteUser(user.id)}>Delete</button>
                             </td>
                         </tr>
                     )}
