@@ -22,7 +22,7 @@ const EditUser = () => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.put(`http://localhost:8888/api/user/${id}/edit`, inputs).then(function(response){
+        axios.put(`http://localhost/react-with-php-mysql-server/user/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
             navigate('/');
         });
